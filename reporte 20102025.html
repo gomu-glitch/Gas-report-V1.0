@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Forecast de Kilómetros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        .memo-header {
+            margin-bottom: 20px;
+        }
+        .memo-header p {
+            margin: 5px 0;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .data-point {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .data-point .label {
+            font-weight: bold;
+        }
+        .positive {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .negative {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Reporte de Forecast de Kilómetros</h1>
+
+        <div class="memo-header">
+            <p><strong>PARA:</strong> Gerencia</p>
+            <p><strong>DE:</strong> Departamento de combustibles</p>
+            <p><strong>FECHA:</strong> 20 de Octubre de 2025</p>
+            <p><strong>ASUNTO:</strong> Reporte de Forecast de Kilómetros - RRC</p>
+        </div>
+
+        <div class="section">
+            <h2>Resumen General (Mes en Curso - Octubre 2025)</h2>
+            <div class="data-point">
+                <span class="label">Promedio Km/Día MTD (Unidades > 500km):</span>
+                <span>23.890,29</span>
+            </div>
+            <div class="data-point">
+                <span class="label">Kilómetros Proyectados del Mes:</span>
+                <span>764.489,26</span>
+            </div>
+            <div class="data-point">
+                <span class="label">Kilómetros Totales Mismo Mes Año Anterior (Octubre 2024):</span>
+                <span>785.323,28</span>
+            </div>
+            <div class="data-point">
+                <span class="label">Diferencial Proyección Actual vs. Mismo Mes Año Anterior:</span>
+                <span class="negative">-20.834</span>
+            </div>
+            <div class="data-point">
+                <span class="label">Promedio Km por Unidad MTD:</span>
+                <span>209,56</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Análisis Comparativo YTD (2025 vs. 2024)</h2>
+            <p>Se compara el acumulado desde el 1 de enero hasta la fecha actual para ambos años.</p>
+            <div class="data-point">
+                <span class="label">Diferencia en Acumulado YTD:</span>
+                <span class="positive">+61.647</span>
+            </div>
+            <div class="data-point">
+                <span class="label">Diferencia en Promedio Mensual YTD:</span>
+                <span class="positive">+6.165</span>
+            </div>
+            <div class="data-point">
+                <span class="label">Diferencia en Promedio Semanal YTD:</span>
+                <span class="positive">+1.434</span>
+            </div>
+            <div class="data-point">
+                <span class="label">Diferencia en Promedio Diario YTD:</span>
+                <span class="positive">+211</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Observaciones Adicionales</h2>
+            <ul>
+                <li>En lo que va del mes en curso del año 2025, se han registrado <strong>12 días</strong> con un kilometraje superior al del mismo día en 2024.</li>
+                <li>Hasta la fecha, en <strong>12 días</strong> del mes en curso de 2025 ya se ha superado el promedio de kilómetros diarios acumulados del año actual (YTD 2025).</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Detalle Semanal (Kilómetros 2025 vs. 2024)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Semana</th>
+                        <th>Km 2025</th>
+                        <th>Km 2024</th>
+                        <th>Diferencial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Semana 40 (29 al 5 de Octubre)</td>
+                        <td>178.437</td>
+                        <td>164.403</td>
+                        <td class="positive">+14.034</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>Semana 41 (6 al 12 de Octubre)</td>
+                        <td>163.172</td>
+                        <td>151.883</td>
+                        <td class="positive">+11.289</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>Semana 42 (13 al 19 de Octubre)</td>
+                        <td>197.814</td>
+                        <td>193.150</td>
+                        <td class="positive">+4.664</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="note">
+            <strong>Nota:</strong> Los cálculos se basan en los datos proporcionados en el archivo "B.D. Rendimientos Unidades RRC - OWL - Datos del informe.csv" y consideran únicamente las unidades de la empresa RRC con un promedio diario de recorrido superior a 500 km. 
+        </p>
+
+    </div>
+
+</body>
+</html>

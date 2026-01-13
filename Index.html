@@ -11,37 +11,59 @@
     /* --- GLOBAL STYLES --- */
     body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: #f4f6f8; margin: 0; padding: 20px; color: #333; }
 
-    /* HEADER */
+    /* LOGIN OVERLAY STYLES */
+    #login-overlay { 
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+      background-color: #f4f6f8; display: flex; justify-content: center; align-items: center; z-index: 9999; 
+    }
+    .login-box { 
+      background: white; padding: 40px; border-radius: 12px; 
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; width: 100%; max-width: 350px; 
+    }
+    .login-box h2 { margin-top: 0; color: #1565C0; }
+    .login-box input { 
+      width: 100%; padding: 12px; margin: 15px 0; border: 1px solid #ddd; 
+      border-radius: 6px; box-sizing: border-box; font-size: 1rem; 
+    }
+    .login-btn { 
+      width: 100%; padding: 12px; background: #1565C0; color: white; border: none; 
+      border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1rem; transition: background 0.2s; 
+    }
+    .login-btn:hover { background: #0D47A1; }
+
+    /* HEADER & TABS */
     header { text-align: center; margin-bottom: 30px; }
+    
+    /* LOGO STYLE */
+    .header-logo { height: 70px; width: auto; margin-bottom: 10px; }
+
     h1 { margin: 0; color: #102027; font-size: 1.8rem; }
     .date-badge { display: inline-block; margin-top: 8px; padding: 4px 12px; background: #e0e0e0; border-radius: 12px; font-size: 0.85rem; color: #555; }
 
-    /* HEADERS */
-    .grid-title { margin-left:10px; color:#546e7a; border-left: 5px solid #ccc; padding-left: 10px; margin-top: 40px; margin-bottom: 15px; font-size: 1.1rem;}
-
-    /* --- CARDS & GRIDS --- */
-    .kpi-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-bottom: 20px;
+    .nav-container { display: flex; justify-content: center; gap: 20px; margin-top: 25px; }
+    .nav-btn { 
+      padding: 10px 30px; border: none; background: white; border-radius: 20px; 
+      font-weight: bold; color: #777; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.2s; 
     }
+    .nav-btn.active { background: #1565C0; color: white; transform: scale(1.05); box-shadow: 0 4px 10px rgba(21, 101, 192, 0.3); }
 
-    .card {
-      background: white; padding: 20px; border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      border-top: 5px solid #ccc; transition: transform 0.2s;
+    /* GRIDS & CARDS */
+    .grid-title { margin-left:10px; color:#546e7a; border-left: 5px solid #ccc; padding-left: 10px; margin-top: 40px; margin-bottom: 15px; font-size: 1.1rem;}
+    .kpi-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 20px; }
+    
+    .card { 
+      background: white; padding: 20px; border-radius: 12px; 
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid #ccc; transition: transform 0.2s; 
     }
     .card:hover { transform: translateY(-3px); }
-
+    
     .card-cat { font-size: 0.75rem; font-weight: bold; text-transform: uppercase; color: #78909c; letter-spacing: 1px; }
     .card-label { font-size: 1rem; font-weight: 600; margin: 5px 0 0 0; color: #37474f; }
     .card-value { font-size: 2.2rem; font-weight: 700; color: #263238; margin: 10px 0; }
-    
     .stats-row { display: flex; gap: 10px; font-size: 0.8rem; }
     .stat-badge { padding: 4px 8px; border-radius: 4px; background: #eceff1; color: #455a64; }
 
-    /* --- COMPARISON BLOCKS (DELTAS) --- */
+    /* COMPARISON BLOCKS (DELTAS) */
     .comp-wrapper { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
     .comp-box { flex: 1; min-width: 300px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid #ccc; }
     .comp-header { font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 10px; border-bottom: 1px solid #eee; margin-bottom: 10px; }
@@ -49,26 +71,36 @@
     .comp-label { color: #555; font-weight: 500; font-size: 0.9rem; }
     .comp-val { font-weight: bold; font-size: 1rem; }
 
-    /* --- CHARTS SECTION --- */
+    /* CHARTS SECTION LAYOUT */
     .charts-wrapper { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
-    .chart-box { flex: 1; min-width: 300px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-    
+    .chart-box { flex: 1; min-width: 400px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
     .chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
     .chart-title { font-size: 1.1rem; color: #455a64; font-weight: bold; }
     .chart-total { font-size: 0.9rem; background: #eceff1; padding: 5px 10px; border-radius: 5px; color: #333; font-weight: bold; }
 
-    /* DAILY BREAKDOWN TABLE */
-    .daily-summary { display: flex; justify-content: space-between; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; color: #666; }
-    .day-stat { 
-        text-align: center; 
-        min-width: 65px; /* Ensures space for breakdown */
-        margin: 0 2px;
+    /* NEW CHART BODY LAYOUT (SIDE BY SIDE) */
+    .chart-body { display: flex; gap: 20px; align-items: flex-start; }
+    .chart-canvas-container { flex: 1; min-width: 0; } /* Takes remaining space */
+    
+    /* SUMMARY TABLE (TOTALIZER) */
+    .summary-table { width: 180px; font-size: 0.85rem; border-collapse: collapse; background: #fafafa; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .summary-table th { background: #eceff1; padding: 8px; text-align: left; font-weight: bold; color: #555; text-transform: uppercase; font-size: 0.75rem; }
+    .summary-table td { padding: 8px; border-bottom: 1px solid #eee; }
+    .summary-total { font-weight: 800; color: #000; font-size: 1rem; border-top: 2px solid #ddd; background: white; }
+    .pct-badge { font-size: 0.7rem; color: #777; background: #eee; padding: 1px 4px; border-radius: 3px; margin-left: 4px; }
+
+    /* RESPONSIVE: Stack table on mobile */
+    @media (max-width: 768px) {
+        .chart-body { flex-direction: column; }
+        .summary-table { width: 100%; margin-bottom: 15px; }
     }
-    .day-name { font-weight: bold; color: #555; font-size: 0.85rem; margin-bottom: 5px;}
-    .day-total { font-weight: 800; font-size: 1.1rem; color: #333; border-bottom: 1px solid #ddd; margin-bottom: 5px; padding-bottom: 2px; }
+
+    /* DAILY BREAKDOWN (Bottom Table) */
+    .daily-summary { display: flex; justify-content: space-between; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; color: #666; overflow-x: auto;}
+    .day-stat { text-align: center; min-width: 65px; margin: 0 2px; }
     .breakdown-row { display: flex; justify-content: space-between; font-size: 0.7rem; margin-bottom: 2px; }
 
-    /* COLORS */
+    /* CATEGORY COLORS */
     .cat-Flota { border-top-color: #9C27B0; }
     .cat-Combustible { border-top-color: #1565C0; }
     .cat-AdBlue { border-top-color: #2E7D32; }
@@ -79,241 +111,276 @@
 </head>
 <body>
 
-  <header>
-    <h1>Daily Operations Report</h1>
-    <div class="date-badge" id="last-updated">Updating data...</div>
-  </header>
-
-  <h3 class="grid-title" style="border-color: #1565C0;">Operaciones (KPIs)</h3>
-  <div class="kpi-container" id="ops-grid">
-    <div style="color:#888;">Loading Dashboard...</div>
-  </div>
-
-  <h3 class="grid-title"></h3>
-  <div class="kpi-container" id="finance-grid"></div>
-
-  <h3 class="grid-title" style="border-color: #607D8B;">Análisis de Variaciones (Deltas)</h3>
-  <div class="comp-wrapper">
-    <div class="comp-box" style="border-top-color: #FF9800;">
-      <div class="comp-header" style="color: #FF9800;">VS Mes Anterior (MoM)</div>
-      <div id="mom-container"></div>
-    </div>
-    <div class="comp-box" style="border-top-color: #9C27B0;">
-      <div class="comp-header" style="color: #9C27B0;">VS Año Anterior (YoY)</div>
-      <div id="yoy-container"></div>
+  <div id="login-overlay">
+    <div class="login-box">
+      <h2>🔒 Restricted Access</h2>
+      <p>Enter access code to view report.</p>
+      <input type="password" id="access-code" placeholder="Enter Password" onkeyup="if(event.key==='Enter') attemptLogin()">
+      <button onclick="attemptLogin()" class="login-btn">Access Dashboard</button>
+      <p id="login-error" style="color: red; display: none; margin-top: 10px;">Incorrect Password</p>
     </div>
   </div>
 
-  <h3 class="grid-title" style="border-color: #2E7D32;">Abastecimiento</h3>
-  <div class="charts-wrapper">
-    
-    <div class="chart-box">
-      <div class="chart-header">
-        <div class="chart-title">⛽ Combustible (Litros)</div>
-        <div class="chart-total" id="diesel-total-badge">Total: ...</div>
-      </div>
-      <canvas id="dieselChart"></canvas>
-      <div class="daily-summary" id="diesel-summary"></div>
-    </div>
+  <div id="main-app" style="display: none;">
+      
+      <header>
+        <img src="data:image/png;base64,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" alt="RRC Logo" class="header-logo">
+        
+        <h1>Daily Operations Report</h1>
+        <div class="date-badge" id="last-updated">Updating...</div>
+        
+        <div class="nav-container">
+          <button class="nav-btn active" onclick="switchFleet('Fleet1', this)">🚛 FLOTA A</button>
+          <button class="nav-btn" onclick="switchFleet('Fleet2', this)">🚜 FLOTA B</button>
+        </div>
+      </header>
 
-    <div class="chart-box">
-      <div class="chart-header">
-        <div class="chart-title">💧 AdBlue (Litros)</div>
-        <div class="chart-total" id="adblue-total-badge">Total: ...</div>
-      </div>
-      <canvas id="adblueChart"></canvas>
-      <div class="daily-summary" id="adblue-summary"></div>
-    </div>
+      <div id="dashboard-content">
+        
+        <h3 class="grid-title" style="border-color: #1565C0;">Operaciones (KPIs)</h3>
+        <div class="kpi-container" id="ops-grid"></div>
 
+        <h3 class="grid-title" style="border-color: #FBC02D;">Finanzas y Costos</h3>
+        <div class="kpi-container" id="finance-grid"></div>
+
+        <h3 class="grid-title" style="border-color: #607D8B;">Análisis de Variaciones (Deltas)</h3>
+        <div class="comp-wrapper">
+          <div class="comp-box" style="border-top-color: #FF9800;">
+            <div class="comp-header" style="color: #FF9800;">VS Mes Anterior (MoM)</div>
+            <div id="mom-container"></div>
+          </div>
+          <div class="comp-box" style="border-top-color: #9C27B0;">
+            <div class="comp-header" style="color: #9C27B0;">VS Año Anterior (YoY)</div>
+            <div id="yoy-container"></div>
+          </div>
+        </div>
+
+        <h3 class="grid-title" style="border-color: #2E7D32;">Consumo Semanal</h3>
+        <div class="charts-wrapper">
+          
+          <div class="chart-box">
+            <div class="chart-header">
+              <div class="chart-title">⛽ Diesel (Litros)</div>
+              <div class="chart-total" id="diesel-total-badge">...</div>
+            </div>
+            
+            <div class="chart-body">
+                <div id="diesel-table-container"></div>
+                <div class="chart-canvas-container">
+                    <canvas id="dieselChart"></canvas>
+                </div>
+            </div>
+
+            <div class="daily-summary" id="diesel-summary"></div>
+          </div>
+
+          <div class="chart-box">
+            <div class="chart-header">
+              <div class="chart-title">💧 AdBlue (Litros)</div>
+              <div class="chart-total" id="adblue-total-badge">...</div>
+            </div>
+            
+            <div class="chart-body">
+                <div id="adblue-table-container"></div>
+                <div class="chart-canvas-container">
+                    <canvas id="adblueChart"></canvas>
+                </div>
+            </div>
+
+            <div class="daily-summary" id="adblue-summary"></div>
+          </div>
+
+        </div>
+      </div>
   </div>
 
   <script>
-    // ============================================
-    // ⚠️ PASTE YOUR NEW DEPLOYMENT URL HERE ⚠️
-    // ============================================
-    const API_URL = 'https://script.google.com/macros/s/AKfycbwABwenmqwoNZKN5qTFicP7YWMYHUmKXWB6s0xPGnotrm9Hx-3u3S7Egc7_vc1EaFNr/exec';
+    // ================= CONFIGURATION =================
+    const APP_PASSWORD = "trucks2026"; 
+    const API_URL = 'https://script.google.com/macros/s/AKfycbxCgk_CwoMlJNkDpIm-r_KlI27ernoNNjXfoWHC5Y4kVWEVdgow5L4st7eg9f7WS2Uq/exec'; 
+    // =================================================
 
+    let GLOBAL_DATA = [];
+    let chartD = null;
+    let chartA = null;
+    const DAYS = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+
+    // 1. LOGIN LOGIC
+    window.onload = function() {
+      if (localStorage.getItem('oil_auth') === 'true') { showDashboard(); }
+    };
+    function attemptLogin() {
+      if (document.getElementById('access-code').value === APP_PASSWORD) {
+        localStorage.setItem('oil_auth', 'true'); showDashboard();
+      } else { document.getElementById('login-error').style.display = 'block'; }
+    }
+    function showDashboard() {
+      document.getElementById('login-overlay').style.display = 'none';
+      document.getElementById('main-app').style.display = 'block';
+      initDashboard();
+    }
+
+    // 2. DATA FETCHING
     async function initDashboard() {
       try {
         const response = await fetch(API_URL);
-        const data = await response.json();
-        
-        document.getElementById('last-updated').innerText = "Last Updated: " + data.updated;
-        renderCards(data.kpis);
-        renderCharts(data.weekly);
-
-      } catch (error) {
-        console.error("Error:", error);
-        document.getElementById('ops-grid').innerHTML = "Error loading data. Please check URL.";
-      }
+        const json = await response.json();
+        GLOBAL_DATA = json.allRows;
+        document.getElementById('last-updated').innerText = "Last Updated: " + json.updated;
+        loadFleet('Fleet1');
+      } catch (error) { console.error(error); }
     }
 
-    function renderCards(kpis) {
-      const opsContainer = document.getElementById('ops-grid');
-      const finContainer = document.getElementById('finance-grid');
-      const momContainer = document.getElementById('mom-container');
-      const yoyContainer = document.getElementById('yoy-container');
-      
-      opsContainer.innerHTML = ''; finContainer.innerHTML = '';
-      momContainer.innerHTML = ''; yoyContainer.innerHTML = '';
+    // 3. TAB SWITCHING
+    function switchFleet(fleetName, btn) {
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      loadFleet(fleetName);
+    }
 
-      // Helper: Centralized Trend Logic (Red/Green + Arrows)
-      const getTrend = (val) => {
-          const strVal = val ? val.toString() : "";
-          const isNeg = strVal.includes('-'); 
-          return {
-              arrow: isNeg ? '▼' : '▲',
-              color: isNeg ? '#d32f2f' : '#2e7d32', // Red or Green Text
-              bg:    isNeg ? '#ffebee' : '#e8f5e9'  // Red or Green BG
-          };
+    function loadFleet(groupName) {
+      const fleetData = GLOBAL_DATA.filter(item => item.group === groupName);
+      
+      const weeklyData = fleetData.filter(item => DAYS.includes(item.category));
+      const kpiData = fleetData.filter(item => !DAYS.includes(item.category));
+      
+      // Look for Info Rows (Year/Week)
+      const yearRow = fleetData.find(item => item.category === 'Info' && item.label === 'Year');
+      const weekRow = fleetData.find(item => item.category === 'Info' && item.label === 'Week');
+      const info = {
+          year: yearRow ? yearRow.value : '2026',
+          week: weekRow ? weekRow.value : '-'
       };
 
-    kpis.forEach(item => {
-        if (!item.value && item.category !== 'Comparativa') return;
+      renderCards(kpiData);
+      renderCharts(weeklyData, info);
+    }
 
-        const momTrend = getTrend(item.mom);
-        const yoyTrend = getTrend(item.yoy);
+    // 4. RENDER CARDS (KPIs + DELTAS)
+    function renderCards(kpis) {
+      const ops = document.getElementById('ops-grid');
+      const fin = document.getElementById('finance-grid');
+      const mom = document.getElementById('mom-container');
+      const yoy = document.getElementById('yoy-container');
+      ops.innerHTML=''; fin.innerHTML=''; mom.innerHTML=''; yoy.innerHTML='';
 
-        // --- A. LOGIC FOR COMPARISONS (DELTAS) ---
-        if (item.category === 'Comparativa') {
-            
-            // 1. Identify Special Row (Quantity/Unidades)
-            const isSpecial = item.label.toLowerCase().includes('quantity') || item.label.toLowerCase().includes('unidades');
+      const getTrend = (val) => {
+          const str = val ? val.toString() : "";
+          const isNeg = str.includes('-'); 
+          return { arrow: isNeg?'▼':'▲', color: isNeg?'#d32f2f':'#2e7d32', bg: isNeg?'#ffebee':'#e8f5e9' };
+      };
 
-            // 2. Define Styles (Top border + background for special row)
-            const rowStyle = isSpecial 
-                ? 'border-top: 2px solid #ccc; margin-top: 8px; padding-top: 8px; background-color: #f1f3f4; padding-left: 8px; border-radius: 4px;' 
-                : '';
-            
-            // 3. Define Text (Bold for special row)
-            const textStyle = isSpecial ? 'font-weight: 800; color: #333;' : '';
+      kpis.forEach(item => {
+        if(!item.value && item.category !== 'Comparativa') return;
+        const mT = getTrend(item.mom);
+        const yT = getTrend(item.yoy);
 
-            // 4. Remove Arrow ONLY if special
-            const arrowSymbol = isSpecial ? '' : momTrend.arrow; // Use same arrow logic for both cols
-
-            // Helper to generate HTML
-            const rowHtml = (label, trend, val) => `
-                <div class="comp-row" style="${rowStyle}">
-                    <span class="comp-label" style="${textStyle}">${label}</span>
-                    <strong class="comp-val" style="color:${trend.color}; ${textStyle}">
-                        ${isSpecial ? '' : trend.arrow} ${val}
-                    </strong>
-                </div>`;
-            
-            momContainer.innerHTML += rowHtml(item.label, momTrend, item.mom);
-            yoyContainer.innerHTML += rowHtml(item.label, yoyTrend, item.yoy);
-            return;
+        if(item.category === 'Comparativa') {
+           const isSpec = item.label.toLowerCase().includes('quantity') || item.label.toLowerCase().includes('unidades');
+           const rStyle = isSpec ? 'border-top:2px solid #ccc; margin-top:8px; padding-top:8px; background-color:#f1f3f4; padding-left:8px; border-radius:4px;' : '';
+           const tStyle = isSpec ? 'font-weight:800; color:#333' : '';
+           const arrow = isSpec ? '' : mT.arrow;
+           const html = (lbl, tr, val) => `<div class="comp-row" style="${rStyle}"><span class="comp-label" style="${tStyle}">${lbl}</span><strong class="comp-val" style="color:${tr.color};${tStyle}">${arrow} ${val}</strong></div>`;
+           mom.innerHTML += html(item.label, mT, item.mom);
+           yoy.innerHTML += html(item.label, yT, item.yoy);
+           return;
         }
 
-        // --- B. LOGIC FOR NORMAL CARDS ---
-        let targetContainer = (item.category === 'Costos') ? finContainer : opsContainer;
-
-        const html = `
+        let target = (item.category === 'Costos') ? fin : ops;
+        target.innerHTML += `
           <div class="card cat-${item.category}">
             <div class="card-cat">${item.category}</div>
             <div class="card-label">${item.label}</div>
-            <div class="card-value">${item.value} <span style="font-size:0.5em; color:#999">${item.unit || ''}</span></div>
-            <div class="stats-row">
-              <span class="stat-badge" style="color:${momTrend.color}; background:${momTrend.bg}">MoM: ${item.mom}</span>
-              <span class="stat-badge" style="color:${yoyTrend.color}; background:${yoyTrend.bg}">YoY: ${item.yoy}</span>
-            </div>
+            <div class="card-value">${item.value} <span style="font-size:0.5em; color:#999">${item.unit||''}</span></div>
+            <div class="stats-row"><span class="stat-badge" style="color:${mT.color}; background:${mT.bg}">MoM: ${item.mom}</span><span class="stat-badge" style="color:${yT.color}; background:${yT.bg}">YoY: ${item.yoy}</span></div>
           </div>`;
-        targetContainer.innerHTML += html;
       });
     }
 
-    function renderCharts(weeklyData) {
-      const labels = weeklyData.map(d => d.day);
+    // 5. RENDER CHARTS
+    function renderCharts(weeklyData, info) {
+       if(chartD) chartD.destroy();
+       if(chartA) chartA.destroy();
+       
+       const fmt = (n) => Math.round(Number(n)||0).toLocaleString('es-AR');
+       const labels = weeklyData.map(d => d.category);
 
-      // --- 1. HELPER: Format Numbers (No decimals) ---
-      // Rounds to whole number and adds thousands separators (12.500)
-      const fmt = (num) => Math.round(Number(num) || 0).toLocaleString('es-AR');
+       // CALC TOTALS
+       const sum = (arr) => arr.reduce((a,b)=>a+b, 0);
+       
+       // Diesel Stats
+       const d_ArgRaw = weeklyData.map(d => Number(d.d_arg)||0);
+       const d_BLPRaw = weeklyData.map(d => Number(d.d_blp)||0);
+       const d_TCTRaw = weeklyData.map(d => Number(d.d_tct)||0);
+       const d_Stats = { arg: sum(d_ArgRaw), blp: sum(d_BLPRaw), tct: sum(d_TCTRaw), total: sum(d_ArgRaw) + sum(d_BLPRaw) + sum(d_TCTRaw) };
 
-      // --- 2. CALCULATE TOTALS ---
-      const d_Totals = weeklyData.map(d => (Number(d.d_arg)||0) + (Number(d.d_blp)||0) + (Number(d.d_tct)||0));
-      const a_Totals = weeklyData.map(d => (Number(d.a_arg)||0) + (Number(d.a_blp)||0) + (Number(d.a_tct)||0));
-      
-      // Weekly Sum
-      const d_WeekSum = d_Totals.reduce((a, b) => a + b, 0);
-      const a_WeekSum = a_Totals.reduce((a, b) => a + b, 0);
+       // AdBlue Stats
+       const a_ArgRaw = weeklyData.map(d => Number(d.a_arg)||0);
+       const a_BLPRaw = weeklyData.map(d => Number(d.a_blp)||0);
+       const a_TCTRaw = weeklyData.map(d => Number(d.a_tct)||0);
+       const a_Stats = { arg: sum(a_ArgRaw), blp: sum(a_BLPRaw), tct: sum(a_TCTRaw), total: sum(a_ArgRaw) + sum(a_BLPRaw) + sum(a_TCTRaw) };
 
-      // Update Top Badges
-      document.getElementById('diesel-total-badge').innerText = `Total Semana: ${fmt(d_WeekSum)} L`;
-      document.getElementById('adblue-total-badge').innerText = `Total Semana: ${fmt(a_WeekSum)} L`;
+       // Update Badges
+       document.getElementById('diesel-total-badge').innerText = `Total: ${fmt(d_Stats.total)} L`;
+       document.getElementById('adblue-total-badge').innerText = `Total: ${fmt(a_Stats.total)} L`;
 
-      // --- 3. BUILD DAILY BREAKDOWN (THE DISCRIMINATION TABLE) ---
-      const d_Summary = document.getElementById('diesel-summary');
-      const a_Summary = document.getElementById('adblue-summary');
-      d_Summary.innerHTML = ''; a_Summary.innerHTML = '';
+       // GENERATE SIDE TABLES
+       const buildTable = (stats, containerId) => {
+           const getPct = (val) => stats.total > 0 ? Math.round((val/stats.total)*100) + '%' : '0%';
+           const html = `
+             <table class="summary-table">
+                <tr><th colspan="2">SEMANA</th></tr>
+                <tr><td>Año</td><td style="text-align:right">${info.year}</td></tr>
+                <tr><td>Semana</td><td style="text-align:right">${info.week}</td></tr>
+                <tr><td colspan="2" style="background:#fff; height:5px;"></td></tr>
+                <tr><td>Argentina</td><td style="text-align:right"><b>${fmt(stats.arg)}</b> <span class="pct-badge">${getPct(stats.arg)}</span></td></tr>
+                <tr><td>BLP</td><td style="text-align:right"><b>${fmt(stats.blp)}</b> <span class="pct-badge">${getPct(stats.blp)}</span></td></tr>
+                <tr><td>TCT</td><td style="text-align:right"><b>${fmt(stats.tct)}</b> <span class="pct-badge">${getPct(stats.tct)}</span></td></tr>
+                <tr class="summary-total"><td>Total</td><td style="text-align:right">${fmt(stats.total)}</td></tr>
+             </table>
+           `;
+           document.getElementById(containerId).innerHTML = html;
+       };
 
-      weeklyData.forEach((d, i) => {
-        const dayShort = d.day.substring(0,3);
+       buildTable(d_Stats, 'diesel-table-container');
+       buildTable(a_Stats, 'adblue-table-container');
 
-        // Helper to create the mini-rows
-        const makeRow = (label, val, color) => `
-            <div class="breakdown-row" style="color:${color}">
-               <span>${label}:</span> <span>${fmt(val)}</span>
-            </div>`;
+       // DAILY BREAKDOWN (Bottom)
+       const dSum = document.getElementById('diesel-summary');
+       const aSum = document.getElementById('adblue-summary');
+       dSum.innerHTML=''; aSum.innerHTML='';
+       
+       weeklyData.forEach((d, i) => {
+         const day = d.category.substring(0,3);
+         const row = (l,v,c) => `<div class="breakdown-row" style="color:${c}"><span>${l}:</span><span>${fmt(v)}</span></div>`;
+         
+         const dDayTotal = d_ArgRaw[i] + d_BLPRaw[i] + d_TCTRaw[i];
+         dSum.innerHTML += `<div class="day-stat"><div style="font-weight:bold;margin-bottom:5px; color:#555">${day}</div><div style="font-weight:800;border-bottom:1px solid #ddd;margin-bottom:2px">${fmt(dDayTotal)}</div>${row('Arg',d.d_arg,'#0D47A1')}${row('BLP',d.d_blp,'#1976D2')}${row('TCT',d.d_tct,'#64B5F6')}</div>`;
+         
+         const aDayTotal = a_ArgRaw[i] + a_BLPRaw[i] + a_TCTRaw[i];
+         aSum.innerHTML += `<div class="day-stat"><div style="font-weight:bold;margin-bottom:5px; color:#555">${day}</div><div style="font-weight:800;border-bottom:1px solid #ddd;margin-bottom:2px">${fmt(aDayTotal)}</div>${row('Arg',d.a_arg,'#1B5E20')}${row('BLP',d.a_blp,'#388E3C')}${row('TCT',d.a_tct,'#81C784')}</div>`;
+       });
 
-        // Diesel Breakdown
-        d_Summary.innerHTML += `
-          <div class="day-stat">
-            <div class="day-name">${dayShort}</div>
-            <div class="day-total">${fmt(d_Totals[i])}</div>
-            ${makeRow('Arg', d.d_arg, '#0D47A1')}
-            ${makeRow('BLP', d.d_blp, '#1976D2')}
-            ${makeRow('TCT', d.d_tct, '#64B5F6')}
-          </div>`;
+       // DRAW CHARTS
+       const cfg = { responsive:true, maintainAspectRatio: false, plugins:{legend:{display:false}}, scales:{x:{stacked:true},y:{stacked:true}} };
+       
+       chartD = new Chart(document.getElementById('dieselChart'), {
+         type:'bar', data: { labels:labels, datasets:[
+           {data:d_ArgRaw, backgroundColor:'#0D47A1'},
+           {data:d_BLPRaw, backgroundColor:'#1976D2'},
+           {data:d_TCTRaw, backgroundColor:'#64B5F6'}
+         ]}, options:cfg
+       });
 
-        // AdBlue Breakdown
-        a_Summary.innerHTML += `
-          <div class="day-stat">
-            <div class="day-name">${dayShort}</div>
-            <div class="day-total">${fmt(a_Totals[i])}</div>
-            ${makeRow('Arg', d.a_arg, '#1B5E20')}
-            ${makeRow('BLP', d.a_blp, '#388E3C')}
-            ${makeRow('TCT', d.a_tct, '#81C784')}
-          </div>`;
-      });
-
-      // --- 4. RENDER CHARTS ---
-      const commonOptions = {
-        responsive: true,
-        plugins: { legend: { display: false } }, // Hide Legend
-        scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true } }
-      };
-
-      // Diesel Chart
-      new Chart(document.getElementById('dieselChart'), {
-        type: 'bar',
-        data: {
-          labels: labels,
-          datasets: [
-            { label: 'Argentina', data: weeklyData.map(d => d.d_arg), backgroundColor: '#0D47A1' },
-            { label: 'BLP',       data: weeklyData.map(d => d.d_blp), backgroundColor: '#1976D2' },
-            { label: 'TCT',       data: weeklyData.map(d => d.d_tct), backgroundColor: '#64B5F6' }
-          ]
-        },
-        options: commonOptions
-      });
-
-      // AdBlue Chart
-      new Chart(document.getElementById('adblueChart'), {
-        type: 'bar',
-        data: {
-          labels: labels,
-          datasets: [
-            { label: 'Argentina', data: weeklyData.map(d => d.a_arg), backgroundColor: '#1B5E20' },
-            { label: 'BLP',       data: weeklyData.map(d => d.a_blp), backgroundColor: '#388E3C' },
-            { label: 'TCT',       data: weeklyData.map(d => d.a_tct), backgroundColor: '#81C784' }
-          ]
-        },
-        options: commonOptions
-      });
+       chartA = new Chart(document.getElementById('adblueChart'), {
+         type:'bar', data: { labels:labels, datasets:[
+           {data:a_ArgRaw, backgroundColor:'#1B5E20'},
+           {data:a_BLPRaw, backgroundColor:'#388E3C'},
+           {data:a_TCTRaw, backgroundColor:'#81C784'}
+         ]}, options:cfg
+       });
     }
-
-    // Start App
-    initDashboard();
   </script>
 </body>
 </html>

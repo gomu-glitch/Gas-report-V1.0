@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Operations Report</title>
+  <title>Combustibles y desempeño</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
@@ -95,12 +95,12 @@
 
   <div id="main-app" style="display: none;">
       <header>
-        <h1>Daily Operations Report</h1>
+        <h1>Reporte diario de operaciones</h1>
         <div class="date-badge" id="last-updated">Updating...</div>
         
         <div class="nav-container">
-          <button class="nav-btn active" onclick="switchFleet('Fleet1', this)">🚛 FLOTA A</button>
-          <button class="nav-btn" onclick="switchFleet('Fleet2', this)">🚜 FLOTA B</button>
+          <button class="nav-btn active" onclick="switchFleet('Fleet1', this)">RRC</button>
+          <button class="nav-btn" onclick="switchFleet('Fleet2', this)">OWL</button>
         </div>
       </header>
 
@@ -109,7 +109,7 @@
         <h3 class="grid-title" style="border-color: #1565C0;">Operaciones (KPIs)</h3>
         <div class="kpi-container" id="ops-grid"></div>
 
-        <h3 class="grid-title" style="border-color: #FBC02D;">Finanzas y Costos</h3>
+        <h3 class="grid-title"></h3>
         <div class="kpi-container" id="finance-grid"></div>
 
         <h3 class="grid-title" style="border-color: #607D8B;">Análisis de Variaciones (Deltas)</h3>
@@ -129,7 +129,7 @@
           
           <div class="chart-box">
             <div class="chart-header">
-              <div class="chart-title">⛽ Diesel (Litros)</div>
+              <div class="chart-title"> Diesel (Litros)</div>
               <div class="chart-total" id="diesel-total-badge">...</div>
             </div>
             
@@ -144,7 +144,7 @@
 
           <div class="chart-box">
             <div class="chart-header">
-              <div class="chart-title">💧 AdBlue (Litros)</div>
+              <div class="chart-title"> AdBlue (Litros)</div>
               <div class="chart-total" id="adblue-total-badge">...</div>
             </div>
             
